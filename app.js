@@ -23,8 +23,12 @@ mongoose.connect('mongodb://localhost/movieapi', { useMongoClient: true})
 */
 // DB connection
 const db = require('./db/Connection')();
+const config = require('./config');
+
+const verifyToken = require('./middleware/VerifyToken');
 
 
+app.set('api_secret_key', config.api_secret_key);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -34,14 +38,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-// index Api
+
+//#region [APİ]
+
+// İndex Api
 app.use('/', indexRouter);
+// Middleware kontolünde geçiyor
+app.use('/api', verifyToken);
 // User api
-app.use('/users', usersRouter);
-// movie APİ  
+app.use('/api/users', usersRouter);
+// Movie APİ  
 app.use('/api/movie', movie);
 // Director APi
 app.use('/api/director', director);
+
+//#endregion
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

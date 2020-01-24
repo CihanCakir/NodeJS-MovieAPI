@@ -1,5 +1,5 @@
 # Node-js Movie Api 
-Node.JS  Movie Api routes
+Node.JS  Movie Api routes  MongoDb
 
 # MOVİES
 | Route | Http Verb |  Post body | Description |
@@ -23,3 +23,9 @@ Node.JS  Movie Api routes
 | api/director/:movie_id | `PUT` |  { 'title' : ... .} | Update Movie |
 | api/director/:movie_id | `DELETE` | Empty | Delete Movie |
 | api/director/top10 | `GET` | Empty | Get the top 10 Movie |
+
+
+# USERS
+| Route | Http Verb |  Post body | Description |
+| ---- | ---- | ---- | ---- |
+| api/register/ | `POST` |  { 'username' : ... .} | Create new user |
