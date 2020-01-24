@@ -10,7 +10,7 @@ Node.JS  Movie Api routes
 | api/movie/:movie_id | `PUT` |  { 'title' : ... .} | Update Movie |
 | api/movie/:movie_id | `DELETE` | Empty | Delete Movie |
 | api/movie/top/:value | `GET` | Empty | Get the top 10 Movie |
-| api/movie/between/:start_date/:end_date | `GET` | Empty | Get the top between date  Movie |
+| api/movie/between/:start_date/:end_date | `GET` | Empty | Get the top between date  Movie|
 
 
 
