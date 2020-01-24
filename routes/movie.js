@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const db = require('mongoose')
 // Movie Model Entity
 const Movie = require('../models/Movie');
 

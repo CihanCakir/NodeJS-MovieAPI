@@ -9,6 +9,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var movie = require('./routes/movie');
 
+var director = require('./routes/director');
+
 var app = express();
 /** 
 mongoose.connect('mongodb://localhost/movieapi', { useMongoClient: true})
@@ -37,6 +39,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 // movie APİ  
 app.use('/api/movie', movie);
+// Director APi
+app.use('/api/director', director);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
